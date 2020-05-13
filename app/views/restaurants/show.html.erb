@@ -1,0 +1,9 @@
+<h1><%= @restaurant.name %></h1>
+<h2 style="font-weight: normal"><%= @restaurant.category %></h2>
+<h2 style="font-weight: normal"><%= @restaurant.address %></h2>
+<h2 style="font-weight: normal"><%= @restaurant.phone_number %></h2>
+
+
+<p><%= link_to "See the reviews", restaurant_reviews_path(@restaurant.id) %></p>
+<p><%= link_to "Edit this restaurant", edit_restaurant_path %></p>
+<%= link_to "Go back to index",  restaurants_path %>

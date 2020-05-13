@@ -1,0 +1,19 @@
+<nav class="navbar navbar-default" role="navigation" id="navbar-index">
+  <a class="navbar-brand" href="/reviews">Reviews</a>
+  <%= link_to "New Review", new_restaurant_review_path(params[:restaurant_id]) %>
+</nav>
+
+<div class="container">
+  <div class="row">
+    <div class="col-8">
+      <% @reviews.each do |review| %>
+        <h2><%= "🌟" * review.rating %></h2>
+        <p><%= review.content %></p>
+        <%= link_to "Edit", edit_review_path(review.id) %>
+        <%= link_to "Delete", review_path(review.id), method: :delete, data: { confirm: "Delete this review of #{review.restaurant.name}?" } %>
+        <p></p>
+      <% end %>
+    </div>
+  </div>
+</div>
+
